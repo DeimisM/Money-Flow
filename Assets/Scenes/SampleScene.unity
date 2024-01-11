@@ -1670,6 +1670,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 98614897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &551926313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551926315}
+  - component: {fileID: 551926314}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &551926314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551926313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e86b534ad1f8754cafeda640b415b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deal: {fileID: 1589270304}
+  deal1: {fileID: 721685046}
+  deal2: {fileID: 2021134939}
+  deal3: {fileID: 539120}
+  deal4: {fileID: 1649676166}
+  deal5: {fileID: 926463634}
+  donation: {fileID: 1067980088}
+  offer: {fileID: 972987388}
+  offer1: {fileID: 279621985}
+  credit: {fileID: 1927869574}
+  credit1: {fileID: 704063651}
+  credit2: {fileID: 1317172332}
+  downsized: {fileID: 1025279273}
+  baby: {fileID: 801583563}
+  money: {fileID: 324417486}
+  money1: {fileID: 2146866549}
+--- !u!4 &551926315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551926313}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.90412724, y: 2.9671302, z: -11.69585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &552155310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,3 +5993,4 @@ SceneRoots:
   - {fileID: 14882779}
   - {fileID: 2002596238}
   - {fileID: 244368624}
+  - {fileID: 551926315}
