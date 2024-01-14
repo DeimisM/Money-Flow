@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    /*
     public Transform deal;
     public Transform deal1;
     public Transform deal2;
@@ -25,9 +27,14 @@ public class GameManager : MonoBehaviour
 
     public Transform money;
     public Transform money1;
+    */
 
-    System.Random random = new System.Random();
+    void Roll()
+    {
+        int dice = Random.Range(0, 6);
 
+    }
+     
     private void Start()
     {
 
@@ -36,10 +43,5 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         
-    }
-
-    private void Roll()
-    {
-        int dice = random.Next(1, 7);
     }
 }
