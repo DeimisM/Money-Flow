@@ -1,40 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    /*
-    public Transform deal;
-    public Transform deal1;
-    public Transform deal2;
-    public Transform deal3;
-    public Transform deal4;
-    public Transform deal5;
+    public FollowPath player;
 
-    public Transform donation;
-
-    public Transform offer;
-    public Transform offer1;
-
-    public Transform credit;
-    public Transform credit1;
-    public Transform credit2;
-
-    public Transform downsized;
-    public Transform baby;
-
-    public Transform money;
-    public Transform money1;
-    */
-
-    void Roll()
+    // Example dice roll function
+    public void RollDice()
     {
-        int dice = Random.Range(0, 6);
+        int diceResult = Random.Range(1, 7);
 
+        // Set the current waypoint based on the dice result, with looping behavior
+        player.currentWaypoint = (player.currentWaypoint + diceResult) % player.waypoints.Length;
+
+        // Allow movement
+        player.moveAllowed = true;
     }
-     
+
     private void Start()
     {
 
@@ -42,6 +25,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 }

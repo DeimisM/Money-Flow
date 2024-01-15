@@ -6,7 +6,7 @@ public class FollowPath : MonoBehaviour
 {
     public Transform[] waypoints;
 
-    float moveSpeed = 1f;
+    float moveSpeed = 10f;
 
     public int currentWaypoint = 0;
 
@@ -33,16 +33,8 @@ public class FollowPath : MonoBehaviour
 
             if (transform.position == waypoints[currentWaypoint].transform.position)
             {
-                currentWaypoint += 1;
-
-                // Check if last waypoint
-                if (currentWaypoint >= waypoints.Length)
-                {
-                    // If yes reset waypointto 0 to create a loop
-                    currentWaypoint = 0;
-                }
+                moveAllowed = false; // Move is completed, stop further movement
             }
         }
     }
-
 }
