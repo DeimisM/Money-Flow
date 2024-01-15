@@ -33,7 +33,7 @@ public class FollowPath : MonoBehaviour
 
             if (transform.position == waypoints[currentWaypoint].transform.position)
             {
-                moveAllowed = false; // Move is completed, stop further movement
+                moveAllowed = false; // after the move is completed, stop further movement
             }
         }
     }

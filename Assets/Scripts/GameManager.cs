@@ -81,11 +81,9 @@ public class GameManager : MonoBehaviour
     {
         int diceResult = Random.Range(1, 7);
 
-        // Set the current waypoint based on the dice result with looping behavior
+        // set the current waypoint based on the dice result with looping behavior
         player.currentWaypoint = (player.currentWaypoint + diceResult) % player.waypoints.Length;
 
         player.moveAllowed = true;
     }
-
-
 }

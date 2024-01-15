@@ -4,14 +4,14 @@ using UnityEngine.UI;
 public class FinanceButton : MonoBehaviour
 {
     public RectTransform uiElement;
-    public float moveSpeed = 100f; // Adjust the speed as needed
-    public float moveAmount = 100f; // Adjust the amount to move
+    public float moveSpeed = 100f;
+    public float moveAmount = 100f;
 
-    private bool moveRight = true; // Flag to determine the direction of movement
+    private bool moveRight = true; // determine the direction of movement
 
     void Start()
     {
-        // Attach the button click event listener
+        // event listener
         Button button = GetComponent<Button>();
         if (button != null)
         {
@@ -21,10 +21,10 @@ public class FinanceButton : MonoBehaviour
 
     public void MoveOnClick()
     {
-        // Get the current position of the UI element
+        // current position of the UI element
         Vector3 currentPosition = uiElement.anchoredPosition;
 
-        // Update the X position based on the direction of movement
+        // updating X position based on the direction of movement
         if (moveRight)
         {
             currentPosition.x += moveAmount;
@@ -34,10 +34,10 @@ public class FinanceButton : MonoBehaviour
             currentPosition.x -= moveAmount;
         }
 
-        // Apply the updated position to the RectTransform
+        // apply the updated position to the RectTransform
         uiElement.anchoredPosition = currentPosition;
 
-        // Toggle the direction for the next click
+        // toggle the direction for the next click
         moveRight = !moveRight;
     }
 }
