@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class Card
@@ -10,42 +11,104 @@ public class Card
     public string headerText;
     public string mainText;
     public CardGroup group; // Add a field to represent the card group
+
+    public TextMeshProUGUI headerTextMesh;
+    public TextMeshProUGUI mainTextMesh;
+    public TextMeshProUGUI buttonText1Mesh;
+    public TextMeshProUGUI buttonText2Mesh;
 }
 
 public enum CardGroup
 {
     Deals,
     Expenses,
-    Offers
+    Offers,
+    Money,
+    Donation,
+    Baby,
+    Downsize
 }
 
 public class Cards : MonoBehaviour
 {
+    public UIManager uiManager;
+
     public List<Card> allCards = new List<Card>();
     public CardGroup selectedCardGroup;
 
     void Start()
     {
         // Example: Adding cards programmatically with groups
-        Card card1 = new Card
+        Card deal1 = new Card
         {
             group = CardGroup.Deals,
-            buttonText1 = "Attack",
-            buttonText2 = "Defend",
-            headerText = "header",
-            mainText = "main"
+            headerText = "DEAL OPPORTUNITY",
+            mainText = "Leading bank wants to sell you stocks that pay divedends. Buy stocks?\n Price: $25\nMoneyflow: $5",
+            buttonText1 = "Yes",
+            buttonText2 = "No"
         };
-        //Card card2 = new Card { buttonText1 = "Heal", buttonText2 = "Use Item", group = CardGroup.Expenses };
-        //Card card3 = new Card { buttonText1 = "Spell", buttonText2 = "Skip Turn", group = CardGroup.Offers };
 
-        allCards.Add(card1);
-        //allCards.Add(card2);
-        //allCards.Add(card3);
+        Card expense1 = new Card
+        {
+            group = CardGroup.Expenses,
+            headerText = "Spending habbits!",
+            mainText = "You went out with your friends last night. $50 had been deducted from you.",
+            buttonText1 = "",
+            buttonText2 = ""
+        };
 
-        // Accessing cards in the list
-        //Debug.Log("Card 1 Button 1 Text: " + allCards[0].buttonText1);
-        //Debug.Log("Card 2 Button 2 Text: " + allCards[1].buttonText2);
-        //Debug.Log("Card 3 Button 1 Text: " + allCards[2].buttonText1);
+        Card offer1 = new Card
+        {
+            group = CardGroup.Offers,
+            headerText = "Stock buyer",
+            mainText = "Friend wants to buy your stocks for $50 each!\nCash: + $50\nMoneyflow: - $5",
+            buttonText1 = "Yes",
+            buttonText2 = "No"
+        };
+
+        Card money1 = new Card
+        {
+            group = CardGroup.Money,
+            headerText = "PAYDAY!",
+            mainText = "This day is your PAYDAY! Collect your cash and go win the game!",
+            buttonText1 = "OK",
+            buttonText2 = ""
+        };
+
+        Card donation = new Card
+        {
+            group = CardGroup.Donation,
+            headerText = "Charity is coming after you!",
+            mainText = "Would you like to donate $100 to starving children for good luck?",
+            buttonText1 = "Yes",
+            buttonText2 = "No"
+        };
+
+        Card baby = new Card
+        {
+            group = CardGroup.Baby,
+            headerText = "Congratulations!",
+            mainText = "A new player spawned in your family! Other expenses increased by $80.",
+            buttonText1 = "OK",
+            buttonText2 = ""
+        };
+
+        Card downsize = new Card
+        {
+            group = CardGroup.Downsize,
+            headerText = "DOWNSIZED!",
+            mainText = "You just lost your main source of income! 1 month of expenses has been paid.",
+            buttonText1 = "",
+            buttonText2 = ""
+        };
+
+        allCards.Add(deal1);
+        allCards.Add(expense1);
+        allCards.Add(offer1);
+        allCards.Add(money1);
+        allCards.Add(donation);
+        allCards.Add(baby);
+        allCards.Add(downsize);
 
         // pick a card from a specific group
         //PickCardFromGroup(CardGroup.Deals);
@@ -61,6 +124,13 @@ public class Cards : MonoBehaviour
         if (groupCards.Count > 0)
         {
             Card selectedCard = groupCards[Random.Range(0, groupCards.Count)];
+
+            // Update TextMeshPro text properties through the UI manager
+            uiManager.headerText.text = selectedCard.headerText;
+            uiManager.mainText.text = selectedCard.mainText;
+            uiManager.buttonText1.text = selectedCard.buttonText1;
+            uiManager.buttonText2.text = selectedCard.buttonText2;
+
             Debug.Log("Picked a card from group " + group + ": " + selectedCard.headerText);
         }
         else
@@ -68,4 +138,6 @@ public class Cards : MonoBehaviour
             Debug.LogWarning("No cards found in group " + group);
         }
     }
+
+
 }
