@@ -5266,6 +5266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 926463634}
+  - component: {fileID: 926463635}
   m_Layer: 0
   m_Name: deal6
   m_TagString: Untagged
@@ -5288,6 +5289,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2002596238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &926463635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926463633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0d1da15e0e7a444aa62f4ef71d848b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCards: []
+  selectedCardGroup: 0
 --- !u!1 &930034554
 GameObject:
   m_ObjectHideFlags: 0
