@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text loanText;
     public TMP_Text loanPaymentText;
 
+    public Button rollButton;
+
+    private bool isMoving = false;
+
     private void Start()
     {
         jobTitleText.text = job;
@@ -73,17 +78,36 @@ public class GameManager : MonoBehaviour
         cashText.text = "$" + cash.ToString();
 
         loanPayment = loan / 100 * 10;
-        loanText.text = "$"+ loan.ToString();
+        loanText.text = "$" + loan.ToString();
         loanPaymentText.text = "$" + loanPayment.ToString();
     }
 
     public void RollDice()
     {
-        int diceResult = Random.Range(1, 7);
+        if (!isMoving)
+        {
+            isMoving = true;
 
-        // set the current waypoint based on the dice result with looping behavior
-        player.currentWaypoint = (player.currentWaypoint + diceResult) % player.waypoints.Length;
+            int diceResult = Random.Range(1, 7);
+
+            // set the current waypoint based on the dice result with looping behavior
+            player.currentWaypoint = (player.currentWaypoint + diceResult) % player.waypoints.Length;
+
+            StartCoroutine(MovePlayer());
+        }
+    }
+
+    IEnumerator MovePlayer()
+    {
+        rollButton.gameObject.SetActive(false); // Make the button invisible
 
         player.moveAllowed = true;
+
+        // Wait until the player has finished moving
+        yield return new WaitUntil(() => !player.moveAllowed);
+
+        // Player has finished moving, make the button visible again
+        rollButton.gameObject.SetActive(true);
+        isMoving = false;
     }
 }

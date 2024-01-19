@@ -3083,6 +3083,7 @@ MonoBehaviour:
   otherExpensesText: {fileID: 1878808763}
   loanText: {fileID: 1868457159}
   loanPaymentText: {fileID: 462632012}
+  rollButton: {fileID: 1529765854}
 --- !u!4 &551926315
 Transform:
   m_ObjectHideFlags: 0
