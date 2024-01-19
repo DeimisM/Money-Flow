@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         taxes = salary / 100 * 30;
         taxesText.text = "$" + taxes.ToString();
 
-        cash = 520;
+        cash = 670;
         loan = 1000;
 
         mortgage = 40000;
@@ -68,6 +68,25 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (string.IsNullOrEmpty(uiManager.buttonText1.text.Trim()))
+        {
+            uiManager.buttonText1.enabled = false;
+        }
+        else
+        {
+            uiManager.buttonText1.enabled = true;
+        }
+
+        if (string.IsNullOrEmpty(uiManager.buttonText2.text.Trim()))
+        {
+            uiManager.buttonText2.enabled = false;
+        }
+        else
+        {
+            uiManager.buttonText2.enabled = true;
+        }
+
+
         totalExpenses = taxes + mortgagePayment + otherExpenses + loanPayment;
         totalIncome = salary;
         payday = totalIncome - totalExpenses;
@@ -117,13 +136,13 @@ public class GameManager : MonoBehaviour
     public void OnLandedOnBabyCard(Card babyCard)
     {
         timesLanded++;
-        Debug.Log("times landed");
+        //Debug.Log("times landed");
 
         if (timesLanded <= 3)
         {
             otherExpenses += 80;
             otherExpensesText.text = "$" + otherExpenses.ToString();
-            Debug.Log("Updated otherExpenses: " + otherExpenses);
+            //Debug.Log("Updated otherExpenses: " + otherExpenses);
         }
 
 
@@ -134,5 +153,15 @@ public class GameManager : MonoBehaviour
             uiManager.buttonText1.text = "";
             uiManager.buttonText2.text = "";
         }
+    }
+
+    public void OnLandedOnExpenseCard()
+    {
+        cash -= 50;
+    }
+
+    public void Downsized()
+    {
+        cash -= totalExpenses;
     }
 }

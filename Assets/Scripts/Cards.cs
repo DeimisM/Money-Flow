@@ -179,6 +179,16 @@ public class Cards : MonoBehaviour
                     // call the OnLandedOnBabyCard function in the GameManager
                     gameManager.OnLandedOnBabyCard(selectedCard);
                 }
+
+                if (group == CardGroup.Expenses)
+                {
+                    gameManager.OnLandedOnExpenseCard();
+                }
+
+                if (group == CardGroup.Downsize)
+                {
+                    gameManager.Downsized();
+                }
             }
             else
             {
@@ -190,5 +200,4 @@ public class Cards : MonoBehaviour
             Debug.LogWarning("No cards found in group " + group);
         }
     }
-
 }
