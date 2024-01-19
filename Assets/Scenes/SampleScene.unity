@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &6177537
@@ -1743,6 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 2
 --- !u!1 &284502128
@@ -1905,6 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 3
 --- !u!1 &349363181
@@ -3069,6 +3072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e86b534ad1f8754cafeda640b415b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 692769087}
   player: {fileID: 50924273}
   salaryText: {fileID: 422652611}
   jobTitleText: {fileID: 6177538}
@@ -4482,6 +4486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 1
 --- !u!1 &721685045
@@ -4529,6 +4534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &724832530
@@ -5096,6 +5102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 5
 --- !u!1 &839353583
@@ -5675,6 +5682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &930034554
@@ -5971,6 +5979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 2
 --- !u!1 &976783868
@@ -6191,6 +6200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 6
 --- !u!1 &1038710343
@@ -6487,6 +6497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 4
 --- !u!1 &1068389734
@@ -7435,6 +7446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 1
 --- !u!1 &1335521255
@@ -8415,6 +8427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &1589504542
@@ -9178,6 +9191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &1658052362
@@ -10734,6 +10748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 1
 --- !u!1 &1935193310
@@ -11384,6 +11399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &2052091738
@@ -12524,6 +12540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
+  gameManager: {fileID: 0}
   allCards: []
   selectedCardGroup: 3
 --- !u!1660057539 &9223372036854775807

@@ -26,12 +26,14 @@ public enum CardGroup
     Money,
     Donation,
     Baby,
-    Downsize
+    Downsize,
+    Start
 }
 
 public class Cards : MonoBehaviour
 {
     public UIManager uiManager;
+    public GameManager gameManager;
 
     public List<Card> allCards = new List<Card>();
     public CardGroup selectedCardGroup;
@@ -39,11 +41,21 @@ public class Cards : MonoBehaviour
     void Start()
     {
         // Example: Adding cards programmatically with groups
+
+        Card startCard = new Card   // neaddinam i allcard list kad negaletu papickint veliau zaidime
+        {
+            group = CardGroup.Start,
+            headerText = "Welcome to the Game!",
+            mainText = "This is the start of your journey. Make wise choices to win! Press \"Roll\" to start.",
+            buttonText1 = "",
+            buttonText2 = ""
+        };
+
         Card deal1 = new Card
         {
             group = CardGroup.Deals,
             headerText = "DEAL OPPORTUNITY",
-            mainText = "Leading bank wants to sell you stocks that pay divedends. Buy stocks?\n Price: $25\nMoneyflow: $5",
+            mainText = "Leading bank wants to sell you stocks that pay dividends. Buy stocks?\n Price: $25\nMoneyflow: $5",
             buttonText1 = "Yes",
             buttonText2 = "No"
         };
@@ -110,9 +122,34 @@ public class Cards : MonoBehaviour
         allCards.Add(baby);
         allCards.Add(downsize);
 
+        allCards.Add(startCard);
+
         // pick a card from a specific group
         //PickCardFromGroup(CardGroup.Deals);
         PickCardFromGroup(selectedCardGroup);
+
+        DisplayStartCard();
+    }
+
+    void DisplayStartCard()
+    {
+        // Find the start card in the list
+        Card startCard = allCards.Find(card => card.group == CardGroup.Start);
+
+        // If the start card is found, update UI with the start card's information
+        if (startCard != null)
+        {
+            uiManager.headerText.text = startCard.headerText;
+            uiManager.mainText.text = startCard.mainText;
+            uiManager.buttonText1.text = startCard.buttonText1;
+            uiManager.buttonText2.text = startCard.buttonText2;
+
+            Debug.Log("Displayed start card: " + startCard.headerText);
+        }
+        else
+        {
+            Debug.LogWarning("Start card not found.");
+        }
     }
 
     public void PickCardFromGroup(CardGroup group)
@@ -120,24 +157,32 @@ public class Cards : MonoBehaviour
         // Filter cards based on the specified group
         List<Card> groupCards = allCards.FindAll(card => card.group == group);
 
-        // Pick a random card from the filtered list
+        // Check if there are any cards in the group
         if (groupCards.Count > 0)
         {
+            // Pick a random card from the filtered list
             Card selectedCard = groupCards[Random.Range(0, groupCards.Count)];
 
-            // Update TextMeshPro text properties through the UI manager
-            uiManager.headerText.text = selectedCard.headerText;
-            uiManager.mainText.text = selectedCard.mainText;
-            uiManager.buttonText1.text = selectedCard.buttonText1;
-            uiManager.buttonText2.text = selectedCard.buttonText2;
+            // Check if the selected card is not null
+            if (selectedCard != null)
+            {
+                // Update TextMeshPro text properties through the UI manager
+                uiManager.headerText.text = selectedCard.headerText;
+                uiManager.mainText.text = selectedCard.mainText;
+                uiManager.buttonText1.text = selectedCard.buttonText1;
+                uiManager.buttonText2.text = selectedCard.buttonText2;
 
-            Debug.Log("Picked a card from group " + group + ": " + selectedCard.headerText);
+                Debug.Log("Picked a card from group " + group + ": " + selectedCard.headerText);
+            }
+            else
+            {
+                Debug.LogWarning("Selected card is null.");
+            }
         }
         else
         {
             Debug.LogWarning("No cards found in group " + group);
         }
     }
-
 
 }

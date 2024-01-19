@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public UIManager uiManager;
+
     public FollowPath player;
 
     public TMP_Text salaryText;
@@ -99,15 +101,37 @@ public class GameManager : MonoBehaviour
 
     IEnumerator MovePlayer()
     {
-        rollButton.gameObject.SetActive(false); // Make the button invisible
+        rollButton.gameObject.SetActive(false); // button invisible
 
         player.moveAllowed = true;
 
-        // Wait until the player has finished moving
+        // wait until the player has finished moving
         yield return new WaitUntil(() => !player.moveAllowed);
 
-        // Player has finished moving, make the button visible again
+        // finished moving, make the button visible again
         rollButton.gameObject.SetActive(true);
         isMoving = false;
+    }
+
+    int timesLanded = 0;
+    public void OnLandedOnBabyCard(Card babyCard)
+    {
+        timesLanded++;
+
+        if (timesLanded <= 3)
+        {
+            otherExpenses += 80;
+            otherExpensesText.text = "$" + otherExpenses.ToString();
+            Debug.Log("Updated otherExpenses: " + otherExpenses);
+        }
+
+
+        else
+        {
+            uiManager.headerText.text = "Limit Reached";
+            uiManager.mainText.text = "You have reached the limit for having children.";
+            uiManager.buttonText1.text = "";
+            uiManager.buttonText2.text = "";
+        }
     }
 }
