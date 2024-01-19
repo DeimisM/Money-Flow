@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &6177537
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 2
 --- !u!1 &284502128
@@ -1907,7 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 3
 --- !u!1 &349363181
@@ -4486,7 +4486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 1
 --- !u!1 &721685045
@@ -4534,7 +4534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &724832530
@@ -5102,7 +5102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 5
 --- !u!1 &839353583
@@ -5682,7 +5682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &930034554
@@ -5979,7 +5979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 2
 --- !u!1 &976783868
@@ -6112,10 +6112,10 @@ RectTransform:
   - {fileID: 218746514}
   m_Father: {fileID: 1935193311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -145, y: -215}
-  m_SizeDelta: {x: 290, y: 370}
+  m_AnchoredPosition: {x: -225, y: -215}
+  m_SizeDelta: {x: 450, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020815068
 MonoBehaviour:
@@ -6200,7 +6200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 6
 --- !u!1 &1038710343
@@ -6497,7 +6497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 4
 --- !u!1 &1068389734
@@ -7446,7 +7446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 1
 --- !u!1 &1335521255
@@ -8427,7 +8427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &1589504542
@@ -9191,7 +9191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &1658052362
@@ -10748,7 +10748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 1
 --- !u!1 &1935193310
@@ -11399,7 +11399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 0
 --- !u!1 &2052091738
@@ -12540,7 +12540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 692769087}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 551926314}
   allCards: []
   selectedCardGroup: 3
 --- !u!1660057539 &9223372036854775807

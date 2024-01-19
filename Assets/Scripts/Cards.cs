@@ -173,6 +173,12 @@ public class Cards : MonoBehaviour
                 uiManager.buttonText2.text = selectedCard.buttonText2;
 
                 Debug.Log("Picked a card from group " + group + ": " + selectedCard.headerText);
+
+                if (group == CardGroup.Baby)
+                {
+                    // call the OnLandedOnBabyCard function in the GameManager
+                    gameManager.OnLandedOnBabyCard(selectedCard);
+                }
             }
             else
             {

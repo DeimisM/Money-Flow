@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
     public void OnLandedOnBabyCard(Card babyCard)
     {
         timesLanded++;
+        Debug.Log("times landed");
 
         if (timesLanded <= 3)
         {
