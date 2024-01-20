@@ -189,6 +189,11 @@ public class Cards : MonoBehaviour
                 {
                     gameManager.Downsized();
                 }
+
+                if (group == CardGroup.Money)
+                {
+                    gameManager.Payday();
+                }
             }
             else
             {

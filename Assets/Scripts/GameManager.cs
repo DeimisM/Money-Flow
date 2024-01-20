@@ -173,6 +173,11 @@ public class GameManager : MonoBehaviour
 
     public void Downsized()
     {
-        cash -= totalExpenses;
+        cash -= totalExpenses / 2;
+    }
+
+    public void Payday()
+    {
+        cash += payday * 2;
     }
 }
