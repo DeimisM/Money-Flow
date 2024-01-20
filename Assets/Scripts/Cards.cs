@@ -83,7 +83,7 @@ public class Cards : MonoBehaviour
             group = CardGroup.Money,
             headerText = "PAYDAY!",
             mainText = "This day is your PAYDAY! Collect your cash and go win the game!",
-            buttonText1 = "OK",
+            buttonText1 = "",
             buttonText2 = ""
         };
 
@@ -92,8 +92,8 @@ public class Cards : MonoBehaviour
             group = CardGroup.Donation,
             headerText = "Charity is coming after you!",
             mainText = "Would you like to donate $100 to starving children for good luck?",
-            buttonText1 = "Yes",
-            buttonText2 = "No"
+            buttonText1 = "Donate",
+            buttonText2 = ""
         };
 
         Card baby = new Card
@@ -101,7 +101,7 @@ public class Cards : MonoBehaviour
             group = CardGroup.Baby,
             headerText = "Congratulations!",
             mainText = "A new player spawned in your family! Other expenses increased by $80.",
-            buttonText1 = "OK",
+            buttonText1 = "",
             buttonText2 = ""
         };
 
@@ -144,39 +144,35 @@ public class Cards : MonoBehaviour
             uiManager.buttonText1.text = startCard.buttonText1;
             uiManager.buttonText2.text = startCard.buttonText2;
 
-            Debug.Log("Displayed start card: " + startCard.headerText);
-        }
-        else
-        {
-            Debug.LogWarning("Start card not found.");
+            //Debug.Log("Displayed start card: " + startCard.headerText);
         }
     }
 
     public void PickCardFromGroup(CardGroup group)
     {
-        // Filter cards based on the specified group
+        // card filtering
         List<Card> groupCards = allCards.FindAll(card => card.group == group);
 
-        // Check if there are any cards in the group
+        // if there are cards in the group
         if (groupCards.Count > 0)
         {
-            // Pick a random card from the filtered list
+            // pick a random card from the filtered list
             Card selectedCard = groupCards[Random.Range(0, groupCards.Count)];
 
-            // Check if the selected card is not null
+            // check if there is a card
             if (selectedCard != null)
             {
-                // Update TextMeshPro text properties through the UI manager
+                // update text mesh pro text properties through the ui manager
                 uiManager.headerText.text = selectedCard.headerText;
                 uiManager.mainText.text = selectedCard.mainText;
                 uiManager.buttonText1.text = selectedCard.buttonText1;
                 uiManager.buttonText2.text = selectedCard.buttonText2;
 
-                Debug.Log("Picked a card from group " + group + ": " + selectedCard.headerText);
+                //Debug.Log("Picked a card from group " + group + ": " + selectedCard.headerText);
 
                 if (group == CardGroup.Baby)
                 {
-                    // call the OnLandedOnBabyCard function in the GameManager
+                    // if the group is baby call baby case and so on with others
                     gameManager.OnLandedOnBabyCard(selectedCard);
                 }
 
@@ -195,14 +191,6 @@ public class Cards : MonoBehaviour
                     gameManager.Payday();
                 }
             }
-            else
-            {
-                Debug.LogWarning("Selected card is null.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No cards found in group " + group);
         }
     }
 }

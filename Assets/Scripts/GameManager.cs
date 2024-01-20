@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
             // set the current waypoint based on the dice result with looping behavior
             player.currentWaypoint = (player.currentWaypoint + diceResult) % player.waypoints.Length;
 
-            StartCoroutine(MovePlayer());
+            StartCoroutine(MovePlayer());   // chat gpt sake taip daryti pls paaikinkite sita coroutine dali                                             !!!
         }
     }
 
@@ -123,9 +123,9 @@ public class GameManager : MonoBehaviour
         player.moveAllowed = true;
 
         // wait until the player has finished moving
-        yield return new WaitUntil(() => !player.moveAllowed);
+        yield return new WaitUntil(() => !player.moveAllowed); // su situo chat gpt padejo pls paaiskinkite zmogaus zodziais ka tai reiskia             !!!
 
-        // finished moving, make the button visible again
+        // finished moving make the button visible again
         rollButton.gameObject.SetActive(true);
         isMoving = false;
     }
@@ -142,7 +142,6 @@ public class GameManager : MonoBehaviour
             otherExpensesText.text = "$" + otherExpenses.ToString();
             //Debug.Log("Updated otherExpenses: " + otherExpenses);
         }
-
 
         else
         {
@@ -179,7 +178,7 @@ public class GameManager : MonoBehaviour
 
     public void Payday()
     {
-        cash += (payday * 2);
+        cash += payday;
     }
 
     public void Donation()
@@ -205,6 +204,16 @@ public class GameManager : MonoBehaviour
         if (stocks > 0)
         {
             cash += 25;
+            stocks--;
+            stocksIncome = stocks * 5;
+        }
+    }
+
+    public void Offer()
+    {
+        if (stocks > 0)
+        {
+            cash += 50;
             stocks--;
             stocksIncome = stocks * 5;
         }

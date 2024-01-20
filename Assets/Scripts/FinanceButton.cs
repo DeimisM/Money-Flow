@@ -21,10 +21,10 @@ public class FinanceButton : MonoBehaviour
 
     public void MoveOnClick()
     {
-        // current position of the UI element
+        // current position of the ui element
         Vector3 currentPosition = uiElement.anchoredPosition;
 
-        // updating X position based on the direction of movement
+        // updating x position based on the direction of movement
         if (moveRight)
         {
             currentPosition.x += moveAmount;
@@ -34,7 +34,7 @@ public class FinanceButton : MonoBehaviour
             currentPosition.x -= moveAmount;
         }
 
-        // apply the updated position to the RectTransform
+        // apply the updated position to the recttransform (ui stuff transform)
         uiElement.anchoredPosition = currentPosition;
 
         // toggle the direction for the next click

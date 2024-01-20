@@ -12,8 +12,10 @@ public class FollowPath : MonoBehaviour
     public int currentWaypoint = 0;
 
     public bool moveAllowed = false;
+
     bool donationCardSelected;
     bool dealSelected;
+    bool offerSelected;
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class FollowPath : MonoBehaviour
     {
         donationCardSelected = false;
         dealSelected = false;
+        offerSelected = false;
 
         if (currentWaypoint <= waypoints.Length - 1)
         {
@@ -48,12 +51,11 @@ public class FollowPath : MonoBehaviour
 
     private void ActivateCardPicking()
     {
-        // Check if the waypoint has a Cards script attached
         Cards cardsComponent = waypoints[currentWaypoint].GetComponent<Cards>();
 
         if (cardsComponent != null)
         {
-            // Pick a card from the selected group
+            // pick a card from the selected group
             cardsComponent.PickCardFromGroup(cardsComponent.selectedCardGroup);
 
             if (currentWaypoint == 0)
@@ -65,12 +67,15 @@ public class FollowPath : MonoBehaviour
             {
                 dealSelected = true;
             }
-        }
-        else
-        {
-            Debug.LogError("Cards component not found on waypoint object.");
+
+            if (currentWaypoint == 9 || currentWaypoint == 14)
+            {
+                offerSelected = true;
+            }
         }
     }
+
+    // functions for buttons
     public void Donate()
     {
         if (donationCardSelected)
@@ -92,6 +97,14 @@ public class FollowPath : MonoBehaviour
         if (dealSelected)
         {
             gameManager.SellStocks();
+        }
+    }
+
+    public void Offer()
+    {
+        if (offerSelected)
+        {
+            gameManager.Offer();
         }
     }
 }
