@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -99,6 +100,11 @@ public class GameManager : MonoBehaviour
         stocksText.text = stocks.ToString();
 
         passiveIncomeText.text = "$" + passiveIncome.ToString();
+
+        if (passiveIncome >= totalExpenses)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void RollDice()
