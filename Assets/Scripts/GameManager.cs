@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
     public TMP_Text loanText;
     public TMP_Text loanPaymentText;
 
+    int stocks;
+    int stocksIncome;
+    public TMP_Text stocksText;
+    public TMP_Text stocksIncomeText;
+
     public Button rollButton;
 
     private bool isMoving = false;
@@ -56,14 +61,14 @@ public class GameManager : MonoBehaviour
 
         cash = 670;
         loan = 1000;
+        stocks = 0;
+        otherExpenses = salary / 100 * 17;
 
         mortgage = 40000;
         mortgagePayment = mortgage / 100;
         mortgageText.text = "$" + mortgage.ToString();
         mortgagePaymentText.text = "$" + mortgagePayment.ToString();
 
-        otherExpenses = salary / 100 * 17;
-        otherExpensesText.text = otherExpenses.ToString();
     }
 
     private void Update()
@@ -86,9 +91,10 @@ public class GameManager : MonoBehaviour
             uiManager.buttonText2.enabled = true;
         }
 
+        stocksIncome = stocks *= 5;
 
         totalExpenses = taxes + mortgagePayment + otherExpenses + loanPayment;
-        totalIncome = salary;
+        totalIncome = salary + stocksIncome;
         payday = totalIncome - totalExpenses;
 
         totalIncomeText.text = "$" + totalIncome.ToString();
@@ -101,6 +107,11 @@ public class GameManager : MonoBehaviour
         loanPayment = loan / 100 * 10;
         loanText.text = "$" + loan.ToString();
         loanPaymentText.text = "$" + loanPayment.ToString();
+
+        otherExpensesText.text = "$" + otherExpenses.ToString();
+
+        stocksIncomeText.text = stocksIncome.ToString();
+        stocksText.text = stocks.ToString();
     }
 
     public void RollDice()
