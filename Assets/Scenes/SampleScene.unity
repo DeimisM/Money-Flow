@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8993ef7a8c6e5449732eae8b659a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 551926314}
   waypoints:
   - {fileID: 1067980088}
   - {fileID: 704063651}
@@ -3222,6 +3223,7 @@ MonoBehaviour:
   loanText: {fileID: 1868457159}
   loanPaymentText: {fileID: 462632012}
   stocksText: {fileID: 870998874}
+  stocksIncomeText: {fileID: 2008960300}
   rollButton: {fileID: 1529765854}
 --- !u!4 &551926315
 Transform:
