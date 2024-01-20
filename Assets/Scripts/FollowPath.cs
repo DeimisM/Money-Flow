@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowPath : MonoBehaviour
 {
+    public GameManager gameManager;
     public Transform[] waypoints;
 
     float moveSpeed = 10f;
@@ -11,6 +12,7 @@ public class FollowPath : MonoBehaviour
     public int currentWaypoint = 0;
 
     public bool moveAllowed = false;
+    bool donationCardSelected;
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class FollowPath : MonoBehaviour
 
     private void Move()
     {
+        donationCardSelected = false;
         if (currentWaypoint <= waypoints.Length - 1)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, moveSpeed * Time.deltaTime);
@@ -39,6 +42,7 @@ public class FollowPath : MonoBehaviour
         }
     }
 
+
     private void ActivateCardPicking()
     {
         // Check if the waypoint has a Cards script attached
@@ -48,10 +52,22 @@ public class FollowPath : MonoBehaviour
         {
             // Pick a card from the selected group
             cardsComponent.PickCardFromGroup(cardsComponent.selectedCardGroup);
+
+            if (currentWaypoint == 0)
+            {
+                donationCardSelected = true;
+            }
         }
         else
         {
             Debug.LogError("Cards component not found on waypoint object.");
+        }
+    }
+    public void Donate()
+    {
+        if (donationCardSelected)
+        {
+            gameManager.Donation();
         }
     }
 }

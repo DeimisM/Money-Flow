@@ -151,7 +151,7 @@ public class Cards : MonoBehaviour
             Debug.LogWarning("Start card not found.");
         }
     }
-
+    bool donationCardSelected = false;
     public void PickCardFromGroup(CardGroup group)
     {
         // Filter cards based on the specified group
@@ -194,6 +194,11 @@ public class Cards : MonoBehaviour
                 {
                     gameManager.Payday();
                 }
+
+                if (group == CardGroup.Donation)
+                {
+                    donationCardSelected = true;
+                }
             }
             else
             {
@@ -205,4 +210,6 @@ public class Cards : MonoBehaviour
             Debug.LogWarning("No cards found in group " + group);
         }
     }
+
+    
 }

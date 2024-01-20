@@ -180,4 +180,9 @@ public class GameManager : MonoBehaviour
     {
         cash += payday * 2;
     }
+
+    public void Donation()
+    {
+        cash -= 100;
+    }
 }
