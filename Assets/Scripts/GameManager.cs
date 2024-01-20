@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text stocksText;
     public TMP_Text stocksIncomeText;
 
+    int passiveIncome;
+    public TMP_Text passiveIncomeText;
+
     public Button rollButton;
 
     private bool isMoving = false;
@@ -73,28 +76,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (string.IsNullOrEmpty(uiManager.buttonText1.text.Trim()))
-        {
-            uiManager.buttonText1.enabled = false;
-        }
-        else
-        {
-            uiManager.buttonText1.enabled = true;
-        }
-
-        if (string.IsNullOrEmpty(uiManager.buttonText2.text.Trim()))
-        {
-            uiManager.buttonText2.enabled = false;
-        }
-        else
-        {
-            uiManager.buttonText2.enabled = true;
-        }
-
-        
+        passiveIncome = stocksIncome;
 
         totalExpenses = taxes + mortgagePayment + otherExpenses + loanPayment;
-        totalIncome = salary + stocksIncome;
+        totalIncome = salary + passiveIncome;
         payday = totalIncome - totalExpenses;
 
         totalIncomeText.text = "$" + totalIncome.ToString();
@@ -110,8 +95,10 @@ public class GameManager : MonoBehaviour
 
         otherExpensesText.text = "$" + otherExpenses.ToString();
 
-        stocksIncomeText.text = stocksIncome.ToString();
+        stocksIncomeText.text = "$" + stocksIncome.ToString();
         stocksText.text = stocks.ToString();
+
+        passiveIncomeText.text = "$" + passiveIncome.ToString();
     }
 
     public void RollDice()
@@ -168,28 +155,58 @@ public class GameManager : MonoBehaviour
 
     public void OnLandedOnExpenseCard()
     {
-        cash -= 50;
+        if (cash >= 50)
+        {
+            cash -= 50;
+        }
+        else
+        {
+            cash = 0;
+        }
     }
 
     public void Downsized()
     {
-        cash -= totalExpenses / 2;
+        if (cash >= totalExpenses / 2)
+        {
+            cash -= totalExpenses / 2;
+        }
+        else
+        {
+            cash = 0;
+        }
     }
 
     public void Payday()
     {
-        cash += payday * 2;
+        cash += (payday * 2);
     }
 
     public void Donation()
     {
-        cash -= 100;
+        if (cash >= 100)
+        {
+            cash -= 100;
+        }
     }
 
     public void BuyStocks()
     {
-        cash -= 25;
-        stocks += 1;
-        stocksIncome = stocks *= 5;
+        if (cash >= 25)
+        {
+            cash -= 25;
+            stocks++;
+            stocksIncome = stocks * 5;
+        }
+    }
+
+    public void SellStocks()
+    {
+        if (stocks > 0)
+        {
+            cash += 25;
+            stocks--;
+            stocksIncome = stocks * 5;
+        }
     }
 }

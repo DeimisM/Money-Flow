@@ -86,4 +86,12 @@ public class FollowPath : MonoBehaviour
             gameManager.BuyStocks();
         }
     }
+
+    public void SellStocks()
+    {
+        if (dealSelected)
+        {
+            gameManager.SellStocks();
+        }
+    }
 }

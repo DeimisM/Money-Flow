@@ -74,8 +74,8 @@ public class Cards : MonoBehaviour
             group = CardGroup.Offers,
             headerText = "Stock buyer",
             mainText = "Friend wants to buy your stocks for $50 each!\nCash: + $50\nMoneyflow: - $5",
-            buttonText1 = "Yes",
-            buttonText2 = "No"
+            buttonText1 = "Sell",
+            buttonText2 = ""
         };
 
         Card money1 = new Card

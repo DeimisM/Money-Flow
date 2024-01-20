@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $ 0
+  m_text: $0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3224,6 +3224,7 @@ MonoBehaviour:
   loanPaymentText: {fileID: 462632012}
   stocksText: {fileID: 870998874}
   stocksIncomeText: {fileID: 2008960300}
+  passiveIncomeText: {fileID: 218746515}
   rollButton: {fileID: 1529765854}
 --- !u!4 &551926315
 Transform:
@@ -9154,7 +9155,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1625913469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 50924273}
+        m_TargetAssemblyTypeName: FollowPath, Assembly-CSharp
+        m_MethodName: SellStocks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1625913469
 MonoBehaviour:
   m_ObjectHideFlags: 0
