@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
 
     public FollowPath player;
-    public Cards cards;
 
     public TMP_Text salaryText;
     public TMP_Text jobTitleText;
@@ -74,6 +73,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (string.IsNullOrEmpty(uiManager.buttonText1.text.Trim()))
+        {
+            uiManager.buttonText1.enabled = false;
+        }
+        else
+        {
+            uiManager.buttonText1.enabled = true;
+        }
+
+        if (string.IsNullOrEmpty(uiManager.buttonText2.text.Trim()))
+        {
+            uiManager.buttonText2.enabled = false;
+        }
+        else
+        {
+            uiManager.buttonText2.enabled = true;
+        }
 
         stocksIncome = stocks *= 5;
 
@@ -94,7 +110,7 @@ public class GameManager : MonoBehaviour
 
         otherExpensesText.text = "$" + otherExpenses.ToString();
 
-        stocksIncomeText.text = "$" + stocksIncome.ToString();
+        stocksIncomeText.text = stocksIncome.ToString();
         stocksText.text = stocks.ToString();
     }
 
@@ -157,20 +173,6 @@ public class GameManager : MonoBehaviour
 
     public void Downsized()
     {
-        cash -= totalExpenses / 2;
-    }
-
-    public void Payday()
-    {
-        cash += payday * 2;
-    }
-
-    public void BuyStocks()
-    {
-        if (cards.selectedCardGroup == CardGroup.Deals)
-        {
-            cash -= 25;
-            stocks += 1;
-        }
+        cash -= totalExpenses;
     }
 }
