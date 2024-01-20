@@ -56,8 +56,8 @@ public class Cards : MonoBehaviour
             group = CardGroup.Deals,
             headerText = "DEAL OPPORTUNITY",
             mainText = "Leading bank wants to sell you stocks that pay dividends. Buy stocks?\n Price: $25\nMoneyflow: $5",
-            buttonText1 = "Yes",
-            buttonText2 = "No"
+            buttonText1 = "Buy",
+            buttonText2 = "Sell"
         };
 
         Card expense1 = new Card
@@ -151,7 +151,7 @@ public class Cards : MonoBehaviour
             Debug.LogWarning("Start card not found.");
         }
     }
-    bool donationCardSelected = false;
+
     public void PickCardFromGroup(CardGroup group)
     {
         // Filter cards based on the specified group
@@ -194,11 +194,6 @@ public class Cards : MonoBehaviour
                 {
                     gameManager.Payday();
                 }
-
-                if (group == CardGroup.Donation)
-                {
-                    donationCardSelected = true;
-                }
             }
             else
             {
@@ -210,6 +205,4 @@ public class Cards : MonoBehaviour
             Debug.LogWarning("No cards found in group " + group);
         }
     }
-
-    
 }

@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
             uiManager.buttonText2.enabled = true;
         }
 
-        stocksIncome = stocks *= 5;
+        
 
         totalExpenses = taxes + mortgagePayment + otherExpenses + loanPayment;
         totalIncome = salary + stocksIncome;
@@ -184,5 +184,12 @@ public class GameManager : MonoBehaviour
     public void Donation()
     {
         cash -= 100;
+    }
+
+    public void BuyStocks()
+    {
+        cash -= 25;
+        stocks += 1;
+        stocksIncome = stocks *= 5;
     }
 }

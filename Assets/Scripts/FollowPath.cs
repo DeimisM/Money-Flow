@@ -13,6 +13,7 @@ public class FollowPath : MonoBehaviour
 
     public bool moveAllowed = false;
     bool donationCardSelected;
+    bool dealSelected;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class FollowPath : MonoBehaviour
     private void Move()
     {
         donationCardSelected = false;
+        dealSelected = false;
+
         if (currentWaypoint <= waypoints.Length - 1)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, moveSpeed * Time.deltaTime);
@@ -57,6 +60,11 @@ public class FollowPath : MonoBehaviour
             {
                 donationCardSelected = true;
             }
+
+            if (currentWaypoint == 2 || currentWaypoint == 5 || currentWaypoint == 7 || currentWaypoint == 10 || currentWaypoint == 13 || currentWaypoint == 15)
+            {
+                dealSelected = true;
+            }
         }
         else
         {
@@ -68,6 +76,14 @@ public class FollowPath : MonoBehaviour
         if (donationCardSelected)
         {
             gameManager.Donation();
+        }
+    }
+
+    public void BuyStocks()
+    {
+        if (dealSelected)
+        {
+            gameManager.BuyStocks();
         }
     }
 }
