@@ -14,3 +14,5 @@ A simple game inspired by "Cashflow".
 >To win, increase your passive income (money flow), so it covers your expenses;
 >
 >Have a good time playing!
+
+Play the game at: https://play.unity.com/mg/other/money-flow
